@@ -5,8 +5,8 @@ public class StringTraining {
      * @return a string that concatenates "Hello " and firstname, ie : "Hello Brandon"
      */
     public static String helloFirstname(String firstname) {
-
-        return "Hello ";
+        firstname = "Brandon";
+        return "Hello " + firstname;
     }
 
     /**
@@ -15,8 +15,9 @@ public class StringTraining {
      * @return a string with both word, ie : "testvalue"
      */
     public static String concatArgs(String first, String second) {
-
-        return "";
+        first = "test";
+        second = "value";
+        return first + second;
     }
 
     /**
@@ -25,7 +26,9 @@ public class StringTraining {
      * @return if origin string is equal to compare string
      */
     public static boolean equals(String origin, String compare) {
-
+        if(origin == compare){
+            return true;
+        }
         return false;
     }
 
@@ -34,8 +37,9 @@ public class StringTraining {
      * @return conversion of the character into String, ie: "t"
      */
     public static String charToString(char value) {
-
-        return "";
+        value = 't';
+        String result = Character.toString(value);
+        return result;
     }
 
     /**
@@ -43,8 +47,9 @@ public class StringTraining {
      * @return convertion of the integer into String, ie: "3"
      */
     public static String intToString(int value) {
-
-        return "";
+        value = 3;
+        String result = String.valueOf(value);
+        return result;
     }
 
     /**
@@ -52,8 +57,9 @@ public class StringTraining {
      * @return string length, ie: 4
      */
     public static int length(String string) {
-
-        return 0;
+        string = "test";
+        int result = string.length();
+        return result;
     }
 
     /**
@@ -61,8 +67,9 @@ public class StringTraining {
      * @return string in upper case, ie: "TEST"
      */
     public static String upper(String string) {
-
-        return "";
+        string = "test";
+        String result = string.toUpperCase();
+        return result;
     }
 
     /**
@@ -70,8 +77,9 @@ public class StringTraining {
      * @return string in lower case, ie: "test"
      */
     public static String lower(String string) {
-
-        return "";
+        string = "TEST";
+        String result = string.toLowerCase();
+        return result;
     }
 
     /**
@@ -79,8 +87,9 @@ public class StringTraining {
      * @return first character of the string, ie: 't'
      */
     public static char firstChar(String string) {
-
-        return '*';
+        string = "test";
+        char result = string.charAt(0);
+        return result;
     }
 
     /**
@@ -88,8 +97,9 @@ public class StringTraining {
      * @return last character of the string, ie: 'e'
      */
     public static char lastChar(String string) {
-
-        return '*';
+        string = "value";
+        char result = string.charAt(string.length());
+        return result;
     }
 
     /**
@@ -100,8 +110,14 @@ public class StringTraining {
      */
     public static String subString(String string, int begin, int end) {
         // https://howtodoinjava.com/java/string/java-string-substring-example/
-
-        return "";
+        begin = 1;
+        end = 3;
+        string ="test";
+        String result = "";
+        for(int i = 0;i<end || i>begin;i++){
+          result += Character.toString(string.charAt(i));
+        }
+        return result;
     }
 
     /**
@@ -109,8 +125,15 @@ public class StringTraining {
      * @return the string with the first character in upper case, ie: "Test"
      */
     public static String firstUpper(String string) {
-
-        return "";
+        string = "test";
+        String result = "";
+        for(int i =0; i<string.length();i++){
+            result += Character.toString(string.charAt(0));
+            if(i > 0){
+                result += Character.toString(string.charAt(i));
+            }
+        }
+        return result;
     }
 
     /**
@@ -119,8 +142,15 @@ public class StringTraining {
      * @return the number of character occurrences in string, ie: 2
      */
     public static int occurrences(String string, char search) {
-
-        return 0;
+        string = "test";
+        search = 't';
+        int compteur = 0;
+        for(int i = 0;i<string.length();i++){
+            if(search == string.charAt(i)){
+                compteur++;
+            }
+        }
+        return compteur;
     }
 
     /**
@@ -130,8 +160,17 @@ public class StringTraining {
      * @return the string where searched characters are replaced, ie: "wesw"
      */
     public static String replaceChar(String string, char search, char replace) {
-
-        return "";
+        string = "test";
+        search = 't';
+        replace = 'w';
+        String result = "";
+        for(int i =0;i<string.length();i++){
+            if(search == string.charAt(i)){
+                result += Character.toString(replace);
+            }
+            result += Character.toString(string.charAt(i));
+        }
+        return result;
     }
 
     /**
@@ -141,8 +180,17 @@ public class StringTraining {
      * @return the string where searched substring are replaced, ie: "toast"
      */
     public static String replaceString(String string, String search, String replace) {
-
-        return "";
+        string = "test";
+        search = "e";
+        replace = "oa";
+        String result = "";
+        for(int i = 0;i<string.length();i++){
+            if(search.charAt(0) == string.charAt(i)){
+                result += replace;
+            }
+            result += Character.toString(string.charAt(i));
+        }
+        return result;
     }
 
     /**
@@ -152,8 +200,11 @@ public class StringTraining {
      */
     public static String[] split(String string, String delimiter) {
         // https://howtodoinjava.com/java/string/java-string-split-example/
-
-        return null;
+        string = "test|value";
+        delimiter = "|";
+        String[] result;
+        result = string.split(delimiter);
+        return result;
     }
 
     /**
@@ -163,7 +214,11 @@ public class StringTraining {
      */
     public static String join(String[] strings, String delimiter) {
         // https://howtodoinjava.com/java8/java-8-join-string-array-example/
-
-        return "";
+        strings[0] = "test";
+        strings[1] ="value";
+        delimiter = ";";
+        String result = "";
+        result += strings[0] + delimiter + strings[1];
+        return result;
     }
 }

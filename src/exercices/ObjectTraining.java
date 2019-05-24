@@ -4,28 +4,41 @@ public class ObjectTraining {
     // - name (String)
     // - age (int)
     // - wilder (boolean)
-
+    String name;
+    int age;
+    boolean wilder;
 
     // TODO 2. Add a Constructor with name and age arguments (in this order)
     // This constructor must initialize name and age attributes
+    public ObjectTraining(String name,int age,boolean wilder){
+        this.name = name;
+        this.age = age;
+        this.wilder = wilder;
+    }
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
 
-    // TODO 3. Add getter method for name attribute
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public boolean isWilder() {
+        return wilder;
+    }
 
-
-    // TODO 4. Add setter method for name attribute
-
-
-    // TODO 5. Add getter method for age attribute
-
-
-    // TODO 6. Add setter method for age attribute
-
-
-    // TODO 7. Add getter method for wilder attribute
-
-
-    // TODO 8. Add setter method for wilder attribute
+    public void setWilder(boolean wilder) {
+        this.wilder = wilder;
+    }
+    public String whoAmI(String name,int age){
+        return "My name is " + name + " and I'm " + age;
+    }
 
 
     // TODO 9. Create a method 'whoAmI' that returns "My name is {name} and I'm {age}"
